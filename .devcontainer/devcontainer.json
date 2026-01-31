@@ -1,0 +1,23 @@
+{
+    "name": "OpenClaw",
+    "image": "mcr.microsoft.com/devcontainers/typescript-node:1-22-bookworm",
+    "features": {
+        "ghcr.io/devcontainers/features/github-cli:1": {},
+        "ghcr.io/devcontainers/features/docker-in-docker:2": {}
+    },
+    "customizations": {
+        "vscode": {
+            "settings": {},
+            "extensions": [
+                "dbaeumer.vscode-eslint",
+                "esbenp.prettier-vscode"
+            ]
+        }
+    },
+    "forwardPorts": [
+        18789,
+        18790
+    ],
+    "postCreateCommand": "npm install -g pnpm && pnpm install && pnpm build",
+    "remoteUser": "node"
+}
